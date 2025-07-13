@@ -150,11 +150,9 @@ with st.form("order_form"):
                 df.to_csv("orders.csv", mode="a", header=False, index=False)
 
 # ---- IMAGE LOCATION INSTRUCTIONS ----
-st.sidebar.header("📸 Hướng dẫn thêm hình ảnh")
-st.sidebar.markdown("👉 Đặt ảnh trong thư mục `Image/` cùng cấp với file này.")
-st.sidebar.markdown("Tên file ảnh cần viết thường, không dấu, nối bằng gạch dưới, ví dụ:")
-st.sidebar.code("""
-Image/nem_nuong_song.jpg
-Image/cha_bo.jpg
-Image/banh_bao_chay.jpg
-""")
+st.sidebar.header("🏪 Giới thiệu thương hiệu HAI LONG")
+st.sidebar.markdown("**Hai Long** là thương hiệu chuyên cung cấp các sản phẩm **chả, nem, bánh bao** và nhiều món ăn chế biến sẵn chuẩn vị Việt Nam.")
+st.sidebar.markdown("✅ Nguyên liệu tuyển chọn, chế biến thủ công, đảm bảo chất lượng và an toàn thực phẩm.")
+st.sidebar.markdown("🚚 Giao hàng nhanh toàn quốc – hỗ trợ đơn sỉ và lẻ.")
+st.sidebar.markdown("📦 Pick up tại: **North Stockton, CA 95207**")
+st.sidebar.markdown("📞 Liên hệ đặt hàng: **(657) 698-6940**")

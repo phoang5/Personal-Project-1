@@ -60,7 +60,6 @@ ingredient_info = {
     "Chả Mực": "Mực tươi, thì là, tiêu, muối",
     "Chả Giò": "Thịt heo, miến, mộc nhĩ, cà rốt, hành tím",
     "Bánh bao chay (8 cái)": "Bột mì, nấm mèo, miến, cà rốt, đậu hũ"
-    # Có thể thêm nhiều món hơn tại đây
 }
 
 st.set_page_config(page_title="Menu Mua Hàng - Hai Long", layout="wide")
@@ -124,30 +123,13 @@ with st.form("order_form"):
             st.success(f"Cảm ơn {customer_name} từ {store_name}! Đây là đơn hàng của bạn:")
 
             total = 0
-            order_details = []
             for s in selections:
                 item_total = s["price"] * s["quantity"]
                 total += item_total
                 st.write(f"- {s['item']}: {s['quantity']} x ${s['price']} = ${item_total:.2f}")
-                order_details.append({
-                    "Khách hàng": customer_name,
-                    "Tên tiệm": store_name,
-                    "Món": s["item"],
-                    "Số lượng": s["quantity"],
-                    "Đơn giá": s["price"],
-                    "Thành tiền": item_total,
-                    "Thời gian": datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-                })
 
             st.markdown(f"## 🧾 Tổng cộng: **${total:.2f}**")
             st.balloons()
-
-            # Lưu đơn hàng vào file CSV
-            df = pd.DataFrame(order_details)
-            if not os.path.exists("orders.csv"):
-                df.to_csv("orders.csv", index=False)
-            else:
-                df.to_csv("orders.csv", mode="a", header=False, index=False)
 
 # ---- IMAGE LOCATION INSTRUCTIONS ----
 st.sidebar.header("🏪 Giới thiệu thương hiệu HAI LONG")
